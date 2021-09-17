@@ -1,0 +1,22 @@
+# Maintainer: r6eve <r6eve at acm dot org>
+
+pkgname=owtools-bin
+# TODO: Major Release
+pkgver=0.1.0
+pkgrel=1
+pkgdesc='Browser commands for terminal junkers'
+arch=('x86_64')
+url='https://github.com/r6eve/owtools'
+license=('Boost')
+# TODO: Cf. depends
+optdepends=('findutils' 'mlocate' 'the_silver_searcher' 'w3m')
+provides=("${pkgname%-bin}")
+conflicts=("${pkgname%-bin}")
+source=("${pkgname}-${pkgver}.tar.zst"::"${url}/releases/download/${pkgver}/${pkgname%-bin}-${CARCH}-unknown-linux-musl.tar.zst")
+sha256sums=('3b437feb2a7bb2b5bbe18e9f60e07e0968771a71e634ee0335f83147afc8835d')
+
+package() {
+  for file in ${pkgname%-bin}-${CARCH}-unknown-linux-musl/*; do
+    install -Dm0755 -t "${pkgdir}/usr/bin/" "${file}"
+  done
+}
