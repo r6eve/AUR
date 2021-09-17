@@ -9,5 +9,5 @@ These packages have some problems. The solution is out there.
 ```bash
 cd ${pkgname}
 makepkg -s
-pacman -U ${pkgname}-${pkgver}-${arch}.pkg.tar.zst
+pacman -U ${pkgname}-${pkgver}-${pkgrel}-${arch}.pkg.tar.zst
 ```
