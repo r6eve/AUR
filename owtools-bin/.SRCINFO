@@ -1,6 +1,6 @@
 pkgbase = owtools-bin
 	pkgdesc = Browser commands for terminal junkers
-	pkgver = 0.1.0
+	pkgver = 0.1.1
 	pkgrel = 1
 	url = https://github.com/r6eve/owtools
 	arch = x86_64
@@ -11,7 +11,7 @@ pkgbase = owtools-bin
 	optdepends = w3m
 	provides = owtools
 	conflicts = owtools
-	source = owtools-bin-0.1.0.tar.zst::https://github.com/r6eve/owtools/releases/download/0.1.0/owtools-x86_64-unknown-linux-musl.tar.zst
+	source = owtools-bin-0.1.1.tar.zst::https://github.com/r6eve/owtools/releases/download/0.1.1/owtools-0.1.1-x86_64-unknown-linux-musl.tar.zst
 	sha256sums = 3b437feb2a7bb2b5bbe18e9f60e07e0968771a71e634ee0335f83147afc8835d
 
 pkgname = owtools-bin

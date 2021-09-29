@@ -2,7 +2,7 @@
 
 pkgname=owtools-bin
 # TODO: Major Release
-pkgver=0.1.0
+pkgver=0.1.1
 pkgrel=1
 pkgdesc='Browser commands for terminal junkers'
 arch=('x86_64')
@@ -12,11 +12,11 @@ license=('Boost')
 optdepends=('findutils' 'mlocate' 'the_silver_searcher' 'w3m')
 provides=("${pkgname%-bin}")
 conflicts=("${pkgname%-bin}")
-source=("${pkgname}-${pkgver}.tar.zst"::"${url}/releases/download/${pkgver}/${pkgname%-bin}-${CARCH}-unknown-linux-musl.tar.zst")
-sha256sums=('3b437feb2a7bb2b5bbe18e9f60e07e0968771a71e634ee0335f83147afc8835d')
+source=("${pkgname}-${pkgver}.tar.zst"::"${url}/releases/download/${pkgver}/${pkgname%-bin}-${pkgver}-${CARCH}-unknown-linux-musl.tar.zst")
+sha256sums=('e2ee32c32186baace2d5c6e206f629f527d9e3b88c9090f53586323e00ec331e')
 
 package() {
-  for file in ${pkgname%-bin}-${CARCH}-unknown-linux-musl/*; do
+  for file in "${pkgname%-bin}-${pkgver}-${CARCH}-unknown-linux-musl"/*; do
     install -Dm0755 -t "${pkgdir}/usr/bin/" "${file}"
   done
 }
