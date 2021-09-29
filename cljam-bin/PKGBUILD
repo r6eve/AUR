@@ -1,7 +1,7 @@
 # Maintainer: r6eve <r6eve at acm dot org>
 
 pkgname=cljam-bin
-pkgver=0.8.0
+pkgver=0.8.1
 pkgrel=1
 pkgdesc='A DNA Sequence Alignment/Map (SAM) library for Clojure'
 arch=('x86_64')
@@ -10,10 +10,11 @@ license=('Apache')
 # TODO: depends=('java-runtime-common')
 provides=("${pkgname%-bin}")
 conflicts=("${pkgname%-bin}")
-source=("${url}/releases/download/${pkgver}/${pkgname%-bin}")
-noextract=("${pkgname%-bin}")
-sha256sums=('1090a80b24da12ddff1e003f0eae01c92bcddb38215d66618332ac19d36acf9f')
+source=("${pkgname}-${pkgver}"::"${url}/releases/download/${pkgver}/${pkgname%-bin}")
+noextract=("${pkgname}-${pkgver}")
+sha256sums=('6aaba62fb4626095d2bf5e0d72eb16234409edd0617a70cc7dc39c6a7a8fd85c')
 
 package() {
+  mv "${pkgname}-${pkgver}" "${pkgname%-bin}"
   install -Dm0755 -t "${pkgdir}/usr/bin/" "${pkgname%-bin}"
 }

@@ -1,4 +1,4 @@
 *.pkg.tar.zst
-cljam
+cljam-bin-*
 pkg
 src
