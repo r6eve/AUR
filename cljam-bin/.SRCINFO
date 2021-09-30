@@ -1,14 +1,14 @@
 pkgbase = cljam-bin
 	pkgdesc = A DNA Sequence Alignment/Map (SAM) library for Clojure
-	pkgver = 0.8.1
+	pkgver = 0.8.2
 	pkgrel = 1
 	url = https://github.com/chrovis/cljam
 	arch = x86_64
 	license = Apache
 	provides = cljam
 	conflicts = cljam
-	noextract = cljam-bin-0.8.1
-	source = cljam-bin-0.8.1::https://github.com/chrovis/cljam/releases/download/0.8.1/cljam
-	sha256sums = 6aaba62fb4626095d2bf5e0d72eb16234409edd0617a70cc7dc39c6a7a8fd85c
+	noextract = cljam-bin-0.8.2
+	source = cljam-bin-0.8.2::https://github.com/chrovis/cljam/releases/download/0.8.2/cljam
+	sha256sums = fb01754f670ce9343efafcea69a8fb361e05fa77ca5f96d8ac15701d82ee97d0
 
 pkgname = cljam-bin
