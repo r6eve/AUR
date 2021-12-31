@@ -1,0 +1,4 @@
+*.pkg.tar.zst
+sra-tools-bin-*
+pkg
+src

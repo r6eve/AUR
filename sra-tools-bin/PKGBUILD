@@ -1,0 +1,27 @@
+# Maintainer: r6eve <r6eve at acm dot org>
+
+# TODO: https://aur.archlinux.org/packages/sra-tools-bin
+# https://wiki.archlinux.org/title/Arch_User_Repository
+# >If there is no response from the maintainer after two weeks, you can file an orphan request.
+
+pkgname=sra-tools-bin
+pkgver=2.11.3
+pkgrel=1
+pkgdesc='The SRA Toolkit and SDK from NCBI is a collection of tools and libraries for using data in the INSDC Sequence Read Archives'
+arch=('x86_64')
+url='https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk'
+license=('custom')
+provides=("${pkgname%-bin}")
+conflicts=("${pkgname%-bin}")
+source=("${pkgname}-${pkgver}.tar.gz"::"${url}/${pkgver}/sratoolkit.${pkgver}-ubuntu64.tar.gz")
+sha256sums=('7de3410494b0427610150d930085adf118cfac7428322c211db9d3cb08a32095')
+
+package() {
+  cd "${srcdir}/sratoolkit.${pkgver}-ubuntu64"
+
+  for file in $(find bin -xtype f); do
+    install -Dm0755 -t "${pkgdir}/usr/$(dirname ${file})" ${file}
+  done
+
+  # TODO: No LICENSE file
+}
